@@ -1,19 +1,16 @@
 package com.bookshopapp.service;
-
 import java.io.IOException;
 import java.util.Optional;
 import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.bookshopapp.entities.Book;
 
 @Service
 public class BookConsumerService {
 	@Autowired
 	ProviderConnector providerConnector;
-    public Optional<Book> getBook(Long id) {
+        public Optional<Book> getBook(Long id) {
 		Optional<Book> BookHolder = Optional.empty();
 		try {
 			BookHolder = Optional.ofNullable(providerConnector
@@ -24,7 +21,7 @@ public class BookConsumerService {
 		}
 		return BookHolder;
 	}
-    public Optional<Book> getBook(String bookName) {
+        public Optional<Book> getBook(String bookName) {
 		Optional<Book> BookHolder = Optional.empty();
 		try {
 			BookHolder = Optional.ofNullable(providerConnector
@@ -37,4 +34,3 @@ public class BookConsumerService {
 	}
     
     }
-
